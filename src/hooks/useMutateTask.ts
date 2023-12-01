@@ -60,7 +60,7 @@ export const useMutateTask = () => {
 
   const deleteTaskMutation = useMutation(
     (id: number) =>
-      axios.delete(`{process.env.REACT_APP_API_URL}/v1/tasks/${id}`),
+      axios.delete(`${process.env.REACT_APP_API_URL}/v1/tasks/${id}`),
     {
       onSuccess: (_, variables) => {
         const previousTasks = queryClient.getQueryData<Task[]>(['tasks'])
